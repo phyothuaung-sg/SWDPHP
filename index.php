@@ -59,4 +59,22 @@
   // control flow
   // loops
   // functions
+
+
+// swap two variables using a temporary third variable.
+
+$a = 10;
+$b = 20;
+$temp = $a; //temp =10
+$a = $b; // a -20
+$b = $temp; // b = 10
+echo $a;
+echo $b;
+
+// check data types using var_dump()
+var_dump($name); // value and type  
+var_dump($age);
+var_dump($height);
+var_dump($is_married);
+var_dump($hobbies);
 ?>
