@@ -128,4 +128,19 @@ echo factorial(8);
             echo $key . "Failed";
         }
     }
+
+    // Multidimensional Array
+
+    $users = array(
+        array("name" => "Aung", "age" => 30, "city" => "Yangon"),
+        array("name" => "Maung", "age" => 39, "city" => "Mandalay"),
+        array("name" => "Hla", "age" => 40, "city" => "Mon Ywa"),
+    );
+
+    foreach($users as $user) {
+        echo "<br>";
+        echo $user ["name"] . "," . $user["age"] . "," .$user["city"];
+    }
+
+
 ?>
