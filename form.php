@@ -22,6 +22,15 @@
 </html>
 
 
+<!-- Get method -->
+<?php
+    if (isset($_GET['name'])) {
+        $name = $_GET['name'];
+        echo "Name: $name";
+        echo "<br>";
+    }
+?>
+
 
 <!-- Post method (useful because of secured) -->
 <?php
