@@ -1,14 +1,15 @@
-<?php
+<?php // login start
     session_start();
     if(!isset($_SESSION['login'])){
         header("Location: index.php");
         exit();
-    }
+    } //login end
 
-    //theme setup
+    //theme setup start
     $theme = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
     $bg = $theme == 'dark' ? '#222' : '#fff';
-    $color = $theme == 'dar' ? '#fff' : '#222';
+    $color = $theme == 'dark' ? '#fff' : '#222';
+    //theme setup end
 ?>
 
 <!DOCTYPE html>
@@ -18,18 +19,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
 </head>
-<body style="background-color: <?php echo $bg; ?>; coor: <?php echo $color; ?>;">
+<!-- theme setup line 23 -->
+<body style="background-color: <?php echo $bg; ?>; color: <?php echo $color; ?>;"> 
     <h1>Welcome to Dashboard,</h1> 
+
+    <!-- logout start -->
     <?php echo $_SESSION['username'];?>! |
-    <a href="logout.php">Logout</a> |<!-- logout -->
-    <form action="set_theme.php" method="post"><br><br>
+    <a href="logout.php">Logout</a> |
+    <!-- logout end -->
     
-    <select name="theme" id="theme">
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-    </select>
-    <input type="submit" value="Save theme">
+    <!-- theme switch start -->
+    <form action="set_theme.php" method="post"><br><br>
+        <select name="theme" id="theme">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+        </select>
+        <input type="submit" value="Save theme">
     </form><br><br>
+    <!-- them switch end -->
      
     
 
