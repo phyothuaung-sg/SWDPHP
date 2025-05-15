@@ -21,7 +21,7 @@
 <body style="background-color: <?php echo $bg; ?>; coor: <?php echo $color; ?>;">
     <h1>Welcome to Dashboard,</h1> 
     <?php echo $_SESSION['username'];?>! |
-    <a href="logout.php">Logout</a> |
+    <a href="logout.php">Logout</a> |<!-- logout -->
     <form action="set_theme.php" method="post"><br><br>
     
     <select name="theme" id="theme">
@@ -31,7 +31,7 @@
     <input type="submit" value="Save theme">
     </form><br><br>
      
-    <!-- logout -->
+    
 
     <?php
         $students = [
