@@ -4,6 +4,11 @@
         header("Location: index.php");
         exit();
     }
+
+    //theme setup
+    $theme = isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light';
+    $bg = $theme == 'dark' ? '#222' : '#fff';
+    $color = $theme == 'dar' ? '#fff' : '#222';
 ?>
 
 <!DOCTYPE html>
@@ -13,8 +18,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
 </head>
-<body>
-    <h1> Welcome, Dashboard</h1>
+<body style="background-color: <?php echo $bg; ?>; coor: <?php echo $color; ?>;">
+    <h1>Welcome to Dashboard,</h1> 
+    <?php echo $_SESSION['username'];?>! |
+    <a href="logout.php">Logout</a> |
+    <form action="set_theme.php" method="post"><br><br>
+    
+    <select name="theme" id="theme">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+    <input type="submit" value="Save theme">
+    </form><br><br>
+     
+    <!-- logout -->
 
     <?php
         $students = [
@@ -25,7 +42,7 @@
             ["name" => "Nollel", "grade" => 55],
         ];
     ?>
-
+    
     <table border="1" cellpadding="5">
         <tr>
             <th>Name</th>
